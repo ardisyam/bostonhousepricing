@@ -1,3 +1,32 @@
-<h1>
-    Hello World
-</h1>
+{% extends 'base.html' %}
+{% block content %}
+        <div class="container">
+          <img src="../static/logo.png" alt="Lexus" class="logo" />
+          {% if message %}
+          <p class="message">{{ message | safe }}</p>
+          {% endif %}
+
+          <form action="/home/" method="POST">
+            <div class="border">
+                <div class="form-group"> <h4>Crime Rate</h4> <input type="text" name="crim" placeholder="" /> </div>
+                <div class="form-group"> <h4>Land Zone</h4> <input type="text" name="zn" placeholder="" /> </div>
+                <div class="form-group"> <h4>Industrial Acres per Town</h4> <input type="text" name="indus" placeholder="" /> </div>
+                <div class="form-group"> <h4>Charler River</h4> <input type="text" name="chas" placeholder="" /> </div>
+                <div class="form-group"> <h4>Nitrix Oxides Concentration</h4> <input type="text" name="nox" placeholder="" /> </div>
+                <div class="form-group"> <h4>Average Number of Rooms per Dwelling</h4> <input type="text" name="rm" placeholder="" /> </div>
+                <div class="form-group"> <h4>Age</h4> <input type="text" name="age" placeholder="" /> </div>
+                <div class="form-group"> <h4>Distances to Five Boston Employment Centres</h4> <input type="text" name="dis" placeholder="" /> </div>
+                <div class="form-group"> <h4>Index of Accessibility to Radial Highways</h4> <input type="text" name="rad" placeholder="" /> </div>
+                <div class="form-group"> <h4>The full-value property-tax rate per $10,000</h4> <input type="text" name="tax" placeholder="" /> </div>
+                <div class="form-group"> <h4>The pupil-teacher ratio by town</h4> <input type="text" name="ptratio" placeholder="" /> </div>
+                <div class="form-group"> <h4>The proportion of people of African American descent</h4> <input type="text" name="b" placeholder="" /> </div>
+                <div class="form-group"> <h4>The percentage lower status of the population</h4> <input type="text" name="lstat" placeholder="" /> </div>
+                
+                <input type="submit" value="Submit" class="btn" />
+            </div>
+          </form>
+
+          
+            {{prediction_text}}
+
+{% endblock %}
